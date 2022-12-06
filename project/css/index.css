@@ -1,0 +1,13 @@
+
+/* .bg_image{
+    width: 100%;
+    height: 20rem;
+} */
+
+.bg-image-full {
+    /* background-repeat: no-repeat; */
+    /* background-attachment: scroll; */
+    height: 100%;
+    /* background-position: inherit; */
+    /* background-size: cover; */
+  }
