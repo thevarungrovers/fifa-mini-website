@@ -34,9 +34,9 @@ $(document).ready(function(){
             }
             else if(email == d_username && password == d_password){
                 alert("Success");
+                window.open("./index_login.html", "_self",true);
                 setCookie("Email: ", email, 1 ); // setting cookie
-                window.open("./index_login.html", "_blank",true);
-                //document.location.href("./index_login.html");
+                // document.location.href("index_login.html");
             }
             else{
                 alert("try again");
@@ -52,6 +52,8 @@ $(document).ready(function(){
 // logout buton
 $(document).ready(function(){
     $("#signout_btn").click(function(){ 
-        window.open("./index_login.html", "_self",true);  
+        window.open("./index.html", "_self",true);  
     }); 
 });
+
+
