@@ -1,6 +1,7 @@
 *{
     /* font */
     font-family: 'Zen Dots', cursive;
+    scroll-behavior: smooth;
 }
 
 /* navbar */

@@ -57,3 +57,60 @@ $(document).ready(function(){
 });
 
 
+// sign up 
+$(document).ready(function(){
+    $("#signup_btn").click(function(){ 
+        let email = $("#signup-email").val();
+        let password = $("#signup-password").val();
+
+        try{
+            if((email == "") || (password == "")){
+                alert("Please enter the Email and Password");
+            }
+            else if(email == d_username && password == d_password){
+                alert("Success");
+                window.open("./index.html", "_self",true);
+                setCookie("Email: ", email, 1 ); // setting cookie
+            }
+            else{
+                alert("Please enter Email: Varun@proj.ca and Password: 123");
+            }  
+        }
+        catch (err){
+            console.log(err);
+        }    
+    }); 
+});
+
+
+// time
+
+
+function startTime(){
+    let d = new Date();
+   setCookie("startTime: ", d.getTime(),1);
+}
+
+
+$(document).ready(function(){
+    $("#subscribe").click(function(){ 
+        let email = $("#sub-email").val();
+        let name = $("#sub-name").val();
+        let now = new Date();
+
+        try{
+            if((email == "") || (password == "")){
+                alert("Please enter the Email and Name");
+            }
+            else {
+                setCookie("submit: ", now.getTime(), 1 ); // setting cookie
+                alert('Success');
+
+                alert("You spend " + (getCookie('submit')) - getCookie('startTime') + "sec");
+            } 
+        }
+        catch (err){
+            console.log(err);
+        }    
+    }); 
+});
