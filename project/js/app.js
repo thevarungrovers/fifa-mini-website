@@ -1,14 +1,13 @@
 const d_username = "Varun@proj.ca";
 const d_password = "123";
 
-// cookie
+// cookies
 function setCookie(cname, cvalue, exdays) {
     var d = new Date();
     d.setTime(d.getTime() + (exdays*24*60*60*1000));
     var expires = "expires="+d.toUTCString();
     document.cookie = cname + "=" + cvalue + "; " + expires;
 }
-
 
 function getCookie(cname) {
 var name = cname + "=";
@@ -20,6 +19,7 @@ for(var i=0; i<ca.length; i++) {
 }
 return "";
 }
+
 
 
 // login buton
@@ -36,10 +36,9 @@ $(document).ready(function(){
                 alert("Success");
                 window.open("./index_login.html", "_self",true);
                 setCookie("Email: ", email, 1 ); // setting cookie
-                // document.location.href("index_login.html");
             }
             else{
-                alert("try again");
+                alert("Try Again\nEmail: Varun@proj.ca and Password: 123");
             }  
         }
         catch (err){
@@ -53,6 +52,7 @@ $(document).ready(function(){
 $(document).ready(function(){
     $("#signout_btn").click(function(){ 
         window.open("./index.html", "_self",true);  
+        setCookie("Email: ", email, -1 ); // setting cookie
     }); 
 });
 
@@ -83,30 +83,28 @@ $(document).ready(function(){
 });
 
 
-// time
-
-
+// on load time 
 function startTime(){
     let d = new Date();
    setCookie("startTime: ", d.getTime(),1);
 }
 
-
+// calculating  newsletter submission time
 $(document).ready(function(){
     $("#subscribe").click(function(){ 
         let email = $("#sub-email").val();
         let name = $("#sub-name").val();
-        let now = new Date();
+        let submit_time = new Date();
 
         try{
-            if((email == "") || (password == "")){
+            if((email == "") || (name == "")){
                 alert("Please enter the Email and Name");
             }
             else {
-                setCookie("submit: ", now.getTime(), 1 ); // setting cookie
+                setCookie("submit: ", submit_time.getTime(), 1 ); // setting cookie
                 alert('Success');
 
-                alert("You spend " + (getCookie('submit')) - getCookie('startTime') + "sec");
+                alert("You spend " + (parseInt(etCookie('submit')) - parseInt(getCookie('startTime'))) + " sec");
             } 
         }
         catch (err){

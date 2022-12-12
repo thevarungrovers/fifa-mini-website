@@ -40,19 +40,13 @@
                         <a class="nav-link active" aria-current="page" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <!-- <a class="nav-link active" href="second.html">About</a> -->
-                        <li  class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle  active" href="second.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            About
-                            </a>
-                            <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#teams">Teams</a></li>
-                            <li><a class="dropdown-item" href="#stadiums">Stadiums</a></li>
-                            </ul>
-                        </li>
+                        <a class="nav-link active" href="second.html">About</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link  active" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link  active" href="search.html">Search</a>
                     </li>
                     <li class="nav-item">
                         <button class="primary">
@@ -62,17 +56,18 @@
                         </button>
                       </li>
                 </ul>
+                <!-- login  -->
                 <span class="navbar-text">
                     <ul>
-                        <li class="nav-item dropdown">
+                        <li class="nav-item dropdown" id="login_section">
                             <a class="nav-link dropdown-toggle  active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Account
                             </a>
-                            <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#modal_login">Login</a></li>
-                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#modal_signup">Signup</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="references.html">References</a></li>
+                            <ul class="dropdown-menu" >
+                                <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#modal_login">Login</a></li>
+                                <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#modal_signup">Signup</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="references.html">References</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -102,7 +97,7 @@
                       <label for="exampleInputPassword1" class="form-label">Password</label>
                       <input type="password" class="form-control" id="input_password_login">
                     </div>
-                    <button id="login_btn" class="btn btn-primary">Login</button>
+                    <button id="login_btn" class="btn btn-primary" onclick="login()">Login</button>
                   </form>
     
                   <p>Create an account <a href="#" data-bs-toggle="modal" data-bs-target="#modal_signup">Signup</a></p>
@@ -125,13 +120,13 @@
                 <form>
                     <div class="mb-3">
                       <label for="exampleInputEmail1" class="form-label">Email address</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                      <input type="email" class="form-control" id="signup-email" aria-describedby="emailHelp">
                     </div>
                     <div class="mb-3">
                       <label for="exampleInputPassword1" class="form-label">Password</label>
-                      <input type="password" class="form-control" id="exampleInputPassword1">
+                      <input type="password" class="form-control" id="signup-password">
                     </div>
-                    <button type="submit" class="btn btn-primary">Signup</button>
+                    <button type="submit" id="signup_btn" class="btn btn-primary">Signup</button>
                   </form>
     
                   <p>Already Have an account <a href="#" data-bs-toggle="modal" data-bs-target="#modal_login">Log in</a></p>
